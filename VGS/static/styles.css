@@ -1,0 +1,89 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d1117; /* Fondo oscuro */
+    color: #c9d1d9; /* Texto claro */
+}
+
+h1, h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #ffffff;
+}
+
+/* Contenedor principal */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Secciones */
+.section {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+/* Juegos disponibles y carrito */
+.juegos, .carrito {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.juego {
+    background: #21262d;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    text-align: center;
+}
+
+.juego p {
+    margin: 10px 0;
+}
+
+/* Botones */
+a {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-top: 8px;
+    background-color: #238636;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+a:hover {
+    background-color: #2ea043;
+}
+
+.vaciar {
+    background-color: #da3633;
+}
+
+.vaciar:hover {
+    background-color: #a41e1c;
+}
+
+/* Estilo para el navbar */
+.navbar {
+    background-color: #a8b7cb;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.navbar a {
+    margin: 0 15px;
+    font-size: 16px;
+    font-weight: bold;
+}

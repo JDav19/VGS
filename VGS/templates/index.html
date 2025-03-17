@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Juegos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#">Inicio</a>
+        <a href="#">Tienda</a>
+        <a href="#">Carrito</a>
+    </div>
+
+    <div class="container">
+        <h1>Tienda de Juegos</h1>
+
+        <div class="section">
+            <h2>Juegos Disponibles</h2>
+            <div class="juegos">
+                {% for juego in juegos %}
+                    <div class="juego">
+                        <p><strong>{{ juego.nombre }}</strong> - ${{ juego.precio }}</p>
+                        <a href="{{ url_for('agregar_al_carrito', juego_id=juego.id) }}">Agregar al Carrito</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Carrito de Compras</h2>
+            <div class="carrito">
+                {% if carrito %}
+                    {% for juego in carrito %}
+                        <div class="juego">
+                            <p><strong>{{ juego.nombre }}</strong> - ${{ juego.precio }}</p>
+                            <a href="{{ url_for('quitar_del_carrito', juego_id=juego.id) }}">Quitar</a>
+                        </div>
+                    {% endfor %}
+                    <br>
+                    <a class="vaciar" href="{{ url_for('vaciar_carrito') }}">Vaciar Carrito</a>
+                {% else %}
+                    <p>El carrito está vacío.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
